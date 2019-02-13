@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="ar_coverpath">
+        <image src="https://p3.pstatp.com/large/39f600038907bf3b9c96">
+        </image>
+    </view>
+    <view class="ar_picker">
+        <view class="ar_cont_h1">{{choose_name}}</view>
+        <view class="ar_cont_wrap">
+            <picker class="" value="{{index}}" bindchange="nameChange" range="{{range}}">
+                <view>{{range[index]}}</view>
+            </picker>
+        </view>
+        <!-- date -->
+        <view class="ar_cont_h1">服务时间</view> 
+        <view class="ar_date_time">
+            <view class="ar_date">
+                <image src="../../images/date.png"></image>
+                <picker value="{{date}}" bindchange="bindDateChange" mode="date">
+                    <view>{{date}}</view>
+                </picker>
+            </view>
+            <view class="ar_time">
+                <image class="" src="../../images/time.png"/>
+                <picker value="{{time}}" bindchange="bindTimeChange" mode="time">
+                    <view>{{time}}</view>
+                </picker>
+            </view>
+        </view>
+        <text class="ar_cont_h1">留言信息</text>
+        <input type="text" placeholder="请输入" class="msg_input" />
+        <button bindtap="bindToastTap" class="ar_book">确认预约</button>
+        <!-- 组件的toast -->
+        <toast hidden="{{showToastBoll}}" bindchange="hideToast">预约成功</toast>
+    </view>
+</view>
